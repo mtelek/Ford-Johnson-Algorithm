@@ -17,7 +17,6 @@ bool validArgs(int argc, char **argv)
 	if (argc < 2)
 		return (std::cerr << "Error: Parameters needed\n", false);
 
-	std::set<int> seen;
 	for (int i = 1; i < argc; i++)
 	{
 		std::string str(argv[i]);
@@ -36,9 +35,6 @@ bool validArgs(int argc, char **argv)
 			if (!std::isdigit(str[j]))
 				return (std::cerr << "Error: Invalid parameter\n", false);
 		}
-		int num = std::atoi(argv[i]);
-		if (!seen.insert(num).second)
-			return (std::cerr << "Error: Duplicate number found: " << num << "\n", false);
 	}
 	return (true);
 }

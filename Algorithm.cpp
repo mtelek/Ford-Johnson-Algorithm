@@ -19,17 +19,8 @@ template <typename Container>
 Algorithm<Container>::~Algorithm() {}
 
 template <typename Container>
-Algorithm<Container>::Algorithm(const Algorithm<Container> &other)
-{
-	con = other.con;
-	main = other.main;
-	pend = other.pend;
-	rest = other.rest;
-	Jacobsthal = other.Jacobsthal;
-	a = other.a;
-	b = other.b;
-	pair_size = other.pair_size;
-}
+Algorithm<Container>::Algorithm(const Algorithm<Container> &other) : con(other.con), main(other.main), pend(other.pend),
+	rest(other.rest), Jacobsthal(other.Jacobsthal), a(other.a), b(other.b), pair_size(other.pair_size) {}
 
 template <typename Container>
 Algorithm<Container> &Algorithm<Container>::operator=(const Algorithm<Container> &other)
