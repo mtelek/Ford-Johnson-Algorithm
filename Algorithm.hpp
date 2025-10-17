@@ -36,6 +36,7 @@ class Algorithm
 		std::vector<std::pair<Container, int> > a;
 		std::vector<std::pair<Container, int> > b;
 		size_t pair_size;
+		int _comparison;
 		
 		//ALGORITHM
 		void getJacobsthal();
@@ -63,6 +64,7 @@ class Algorithm
 		void printContainer();
 		bool is_sorted();
 		size_t getSize() const;
+		int getComp() const;
 };
 
 #include "Algorithm.cpp"

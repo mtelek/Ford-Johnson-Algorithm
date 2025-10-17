@@ -75,6 +75,7 @@ int main(int argc, char **argv)
 					<< std::fixed << std::setprecision(5) << duration << " us\n";
 		if (!Deque.is_sorted())
 			std::cout << "Error: Deque container have not been sorted correctly\n";
+		std::cout << "Number of comparisons: " << Deque.getComp() << std::endl;
 	}
 	return (0);
 }

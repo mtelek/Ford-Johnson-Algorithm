@@ -20,7 +20,7 @@ Algorithm<Container>::~Algorithm() {}
 
 template <typename Container>
 Algorithm<Container>::Algorithm(const Algorithm<Container> &other) : con(other.con), main(other.main), pend(other.pend),
-	rest(other.rest), Jacobsthal(other.Jacobsthal), a(other.a), b(other.b), pair_size(other.pair_size) {}
+	rest(other.rest), Jacobsthal(other.Jacobsthal), a(other.a), b(other.b), pair_size(other.pair_size), _comparison(other._comparison) {}
 
 template <typename Container>
 Algorithm<Container> &Algorithm<Container>::operator=(const Algorithm<Container> &other)
@@ -35,12 +35,16 @@ Algorithm<Container> &Algorithm<Container>::operator=(const Algorithm<Container>
 		a = other.a;
 		b = other.b;
 		pair_size = other.pair_size;
+		_comparison = other._comparison;
 	}
 	return (*this);
 }
 
 template <typename Container>
 size_t Algorithm<Container>::getSize() const  {return (con.size()); }
+
+template <typename Container>
+int Algorithm<Container>::getComp() const  {return (_comparison); }
 
 template <typename Container>
 bool Algorithm<Container>::is_sorted()
@@ -134,6 +138,7 @@ size_t Algorithm<Container>::binarySearch(size_t block_len, const Container& num
 			left = mid + 1;
 		else
 			right = mid;
+		_comparison++;
 	}
 	size_t insert_pos = left * block_len;
 	if (insert_pos > effective_size)
@@ -287,7 +292,10 @@ void Algorithm<Container>::performUpscale()
 	{
 		size_t half_pos = (pos + 1) - (pair_size / 2) - 1;
 		if (con[pos] < con[half_pos])
+		{
 			switch_posi(pos, pair_size - 1);
+			_comparison++;
+		}
 	}
 }
 
@@ -332,6 +340,7 @@ void Algorithm<Container>::fordJohnson(bool &upscale)
 template <typename Container>
 int Algorithm<Container>::run()
 {
+	_comparison = 0;
 	if (!is_sorted())
 	{
 		getJacobsthal();
