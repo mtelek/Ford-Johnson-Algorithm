@@ -7,7 +7,7 @@ A C++ implementation of the Ford-Johnson algorithm, also known as Merge-Insertio
 The Ford-Johnson algorithm is a comparison-based sorting algorithm that combines merge and insertion sort strategies.  
 It's particularly interesting because it was one of the first algorithms proven to achieve the optimal number of comparisons for sorting.
 
-For a detailed explanation and a step-by-step visualization of the Ford-Johnson sorting algorithm, see this article:
+For a detailed explanation and a step-by-step visualization of the Ford-Johnson sorting algorithm, see this article:  
 https://dev.to/emuminov/human-explanation-and-step-by-step-visualisation-of-the-ford-johnson-algorithm-5g91
 
 ## 🚀 Features
