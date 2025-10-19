@@ -4,7 +4,7 @@ A C++ implementation of the Ford-Johnson algorithm, also known as Merge-Insertio
 
 ## 📋 About
 
-The Ford-Johnson algorithm is a comparison-based sorting algorithm that combines merge and insertion sort strategies.  
+The algorithm is a hybrid sorting algorithm, famous for using a clever insertion sequence to minimize the number of comparisons.  
 It's particularly interesting because it was one of the first algorithms proven to achieve the optimal number of comparisons for sorting.
 
 For a detailed explanation and a step-by-step visualization of the Ford-Johnson sorting algorithm, see this article:  
@@ -44,7 +44,7 @@ Run the program with a list of integers to sort:
 ## 📚 Algorithm Details
 - Time Complexity: `O(n*log(n))` comparisons
 - Space Complexity: `O(n²)`
-- Method: Combination of merge sort and insertion sort
+- Method: Specialized recursive algorithm using Jacobsthal number sequencing with binary search insertion
 
 ## 🔧 Requirements
 C++98 compatible compiler (`g++`, `c++`)  
